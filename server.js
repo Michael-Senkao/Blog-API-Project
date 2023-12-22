@@ -4,9 +4,8 @@ import axios from "axios";
 
 const app = express();
 const port = process.env.port || 3000;
-const API_URL = "http://blog.cyclic.app";
-
-app.use(express.static("public"));
+const API_URL = "http://localhost:4000";
+env.app.use(express.static("public"));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
