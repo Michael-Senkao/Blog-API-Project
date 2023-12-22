@@ -2,7 +2,7 @@ import express from "express";
 import bodyParser from "body-parser";
 
 const app = express();
-const port = 4000;
+const port = process.env.port || 4000;
 
 // In-memory data store
 let posts = [
@@ -99,5 +99,5 @@ app.delete("/posts/:id", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`API is running at http://localhost:${port}`);
+  console.log(`API is running at port: ${port}`);
 });

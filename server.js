@@ -3,8 +3,8 @@ import bodyParser from "body-parser";
 import axios from "axios";
 
 const app = express();
-const port = 3000;
-const API_URL = "http://localhost:4000";
+const port = process.env.port || 3000;
+const API_URL = "http://blog.cyclic.app";
 
 app.use(express.static("public"));
 
@@ -78,5 +78,5 @@ app.get("/api/posts/delete/:id", async (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Backend server is running on http://localhost:${port}`);
+  console.log(`Backend server is running on port ${port}`);
 });
